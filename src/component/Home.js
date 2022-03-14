@@ -2,11 +2,14 @@ import { Box,  Center, Container, Divider, Flex, Grid, GridItem, HStack, Image, 
 import { FaFacebookF, FaArrowRight} from "react-icons/fa";
 import { ImArrowRight2 } from "react-icons/im";
 import { BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ReviewsCard from "./ReviewsCard";
+import data from  './Reviewdata'
 
 export default function Home() {
+  const [people] = useState(data)
   return (
     <div>
      <Navbar/>
@@ -154,6 +157,9 @@ export default function Home() {
               </SimpleGrid>
 
             </Box>
+
+
+            <ReviewsCard people={people}/>
           
           </Box>
        
@@ -163,7 +169,7 @@ export default function Home() {
 
           </Grid>
 
-          <Divider borderWidth="1px" ccolor="brown"/>
+          <Divider borderWidth="1px" mt="32px" ccolor="brown"/>
           <Text m="12px" colorScheme="skyblue">
             The Blog of The Twenty First CEntury Hurayy!!!!!!!!
           </Text>
